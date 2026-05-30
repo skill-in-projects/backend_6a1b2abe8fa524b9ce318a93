@@ -18,6 +18,15 @@ The backend can use a Google API key provided via the **GOOGLE_API_KEY** environ
 
 **Recommended SQL Editor tool (Free):** [pgAdmin](https://www.pgadmin.org/download/)
 
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Set **DATABASE_URL** (and optionally **GOOGLE_API_KEY**) before starting. The API listens on port **8080** by default; Swagger is at `http://localhost:8080/swagger`.
+
 ## Deployment
 
 This backend is configured for Railway deployment using nixpacks.toml.
