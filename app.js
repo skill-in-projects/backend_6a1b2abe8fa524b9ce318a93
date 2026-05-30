@@ -4,6 +4,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const winston = require('winston');
 const testController = require('./Controllers/TestController');
+const testCoderController = require('./Controllers/TestCoderController');
 
 // Configure logging - Warning and Error only
 const logger = winston.createLogger({
@@ -68,6 +69,8 @@ app.get('/api/test/:id', asyncHandler(testController.getById));
 app.post('/api/test', asyncHandler(testController.create));
 app.put('/api/test/:id', asyncHandler(testController.update));
 app.delete('/api/test/:id', asyncHandler(testController.remove));
+
+app.get('/api/testcoder', testCoderController.getAll);
 
 app.get('/', (req, res) => {
     res.json({ 
